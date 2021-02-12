@@ -4,14 +4,9 @@ valheim-server
 installs and runs [valheim](https://www.valheimgame.com/)
 
 Requirements
-------------
-```yaml
-roles:
-  - src: https://github.com/aversiste/ansible-steamcmd.git
-    name: aversiste.steamcmd
-    version: master
+  debian or redhat systems 32 bit
+  pending 64 bit support
 
-```
 
 Role Variables
 --------------
@@ -22,8 +17,10 @@ Role Variables
 
 Dependencies
 ------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+roles:
+  - src: https://github.com/aversiste/ansible-steamcmd.git
+    name: aversiste.steamcmd
+    version: master.
 
 Example Playbook
 ----------------
