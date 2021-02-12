@@ -4,7 +4,10 @@ valheim-server
 installs and runs [valheim](https://www.valheimgame.com/)
 
 Requirements
+------------
+
   debian or redhat systems 32 bit
+  
   pending 64 bit support
 
 
