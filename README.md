@@ -32,11 +32,11 @@ Including an example of how to use your role (for instance, with variables passe
 ```yaml
     - hosts: servers
       roles:
-         - { role: valheim-server, x: 42 }
+        - { role: valheim-server, x: 42 }
 
     - hosts: servers
-        roles:
-          - { role: valheim-server, gm_name: "user1234" }
+      roles:
+        - { role: valheim-server, gm_name: "user1234" }
 ```
 License
 -------
