@@ -1,7 +1,8 @@
 galaxy_info:
   author: admin@justforcode.com
   description: installs valheim server
-  issue_tracker_url: http://example.com/issue/tracker
+  issue_tracker_url: https://github.com/wbedu/valheim-server/issues/tracker
+  github_branch: main
   license:
     - MIT
   license: license (GPL-2.0-or-later, MIT, etc)
