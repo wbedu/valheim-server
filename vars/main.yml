@@ -1,0 +1,6 @@
+---
+# vars file for deploy_valheim-server
+
+#user that will own all valheim files and processes
+# will create user if it does not exist on host
+gm_name: "vhadmin"
