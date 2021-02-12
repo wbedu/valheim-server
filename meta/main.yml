@@ -1,0 +1,21 @@
+galaxy_info:
+  author: admin@justforcode.com
+  description: installs valheim server
+  issue_tracker_url: http://example.com/issue/tracker
+  license:
+    - MIT
+  license: license (GPL-2.0-or-later, MIT, etc)
+
+  min_ansible_version: 2.9
+
+  platforms:
+  - name: Fedora
+  - name: Ubuntu
+
+  galaxy_tags:
+    - game
+    - valheim
+    - steamcmd
+
+  dependencies:
+    - aversiste.steamcmd
