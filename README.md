@@ -14,7 +14,7 @@ Role Variables
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `gm_name` | username on host that owns server files and processes | `hvadmin` |
-| `gm_pass` | password for linux user | <span style="color:red"> password is not defined</span> |
+| `gm_pass` | password for linux user |  not defined|
 | `run_valheim` | determins whether to run the game server or not | `yes` |
 
 <!-- | `valheim_server_name` | default server name | `valheim community server` |
