@@ -42,6 +42,11 @@
       cmd: "/usr/games/steamcmd +login anonymous +force_install_dir {{ install_dir }} +app_update 896660 validate +exit"
       chdir: "{{ install_dir }}"
 
+  - name:
+    template:
+      src: templates/start_server.j2
+      dest: "{{ install_dir }}/start_server.sh"
+
   - name: run valheim
     shell:
       cmd: screen -d -m ./start_server.sh

@@ -7,3 +7,10 @@ gm_name: "vhadmin"
 
 # determins whether to run the game server or not
 run_valheim: yes
+
+
+valheim_server_name: "valheim community server"
+
+valheim_server_password: "hunter2345"
+
+valheim_server_port: "2456"
