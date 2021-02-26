@@ -4,3 +4,6 @@
 #user that will own all valheim files and processes
 # will create user if it does not exist on host
 gm_name: "vhadmin"
+
+# determins whether to run the game server or not
+run_valheim: yes

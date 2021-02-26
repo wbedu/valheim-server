@@ -46,4 +46,5 @@
     shell:
       cmd: screen -d -m ./start_server.sh
       chdir: "{{ install_dir }}"
+    when: run_valheim
   become_user: "{{ gm_name }}"
