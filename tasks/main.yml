@@ -10,7 +10,7 @@
   user:
     name: "{{ gm_name }}"
     shell: /bin/bash
-    password: "{{ gm_pass }}"
+    password: "{{ gm_pass | password_hash('sha512') }}"
     append: yes
   when: gm_pass is defined
 
