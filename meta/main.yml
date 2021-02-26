@@ -17,4 +17,6 @@ galaxy_info:
     - steamcmd
 
   dependencies:
-    - siw36.ansible_steamcmd
+    - src: https://github.com/Aversiste/ansible-steamcmd.git
+      name: Aversiste.ansible-steamcmd
+      version: master

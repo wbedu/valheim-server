@@ -10,7 +10,7 @@
   user:
     name: "{{ gm_name }}"
     shell: /bin/bash
-    password: "{{gm_pass}}"
+    password: "{{ gm_pass }}"
     append: yes
   when: gm_pass is defined
 
@@ -39,20 +39,27 @@
       name: ansible-steamcmd
     vars:
       steamcmd_user: "{{ gm_name }}"
+
   - name: ensure main directory exists
     file:
       path: "{{ install_dir }}"
       state: directory
+      owner: "{{ gm_name }}"
+      group: "{{ gm_name }}"
+      mode: '0644'
 
   - name: install server files
     shell:
       cmd: "/usr/games/steamcmd +login anonymous +force_install_dir {{ install_dir }} +app_update 896660 validate +exit"
       chdir: "{{ install_dir }}"
 
-  - name:
+  - name: "generate start_server.sh script"
     template:
       src: templates/start_server.j2
       dest: "{{ install_dir }}/start_server.sh"
+      owner: "{{ gm_name }}"
+      group: "{{ gm_name }}"
+      mode: '0644'
 
   - name: run valheim
     shell:
