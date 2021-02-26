@@ -6,10 +6,7 @@ installs and runs [valheim](https://www.valheimgame.com/)
 Requirements
 ------------
 
-  debian or redhat systems 32 bit
-  
-  pending 64 bit support
-
+  debian OS Family
 
 Role Variables
 --------------
@@ -18,10 +15,12 @@ Role Variables
 |----------|-------------|---------|
 | `gm_name` | username on host that owns server files and processes | `hvadmin` |
 
+
 Dependencies
 ------------
 roles:
-  - src: https://github.com/aversiste/ansible-steamcmd.git
+  - src: https://github.com/aversiste/siw36.ansible_steamcmd
+.git
     name: aversiste.steamcmd
     version: master.
 
@@ -32,7 +31,7 @@ Including an example of how to use your role (for instance, with variables passe
 ```yaml
     - hosts: servers
       roles:
-        - { role: valheim-server, x: 42 }
+        - { role: valheim-server, gm_name: "user1234" }
 
     - hosts: servers
       roles:

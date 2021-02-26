@@ -1,12 +1,10 @@
 galaxy_info:
-  author: admin@justforcode.com
+  author: wbedu@github
   description: installs valheim server
   issue_tracker_url: https://github.com/wbedu/valheim-server/issues/tracker
   github_branch: main
   license:
     - MIT
-  license: license (GPL-2.0-or-later, MIT, etc)
-
   min_ansible_version: 2.9
 
   platforms:
@@ -19,4 +17,4 @@ galaxy_info:
     - steamcmd
 
   dependencies:
-    - aversiste.steamcmd
+    - siw36.ansible_steamcmd

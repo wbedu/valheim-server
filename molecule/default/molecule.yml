@@ -5,14 +5,8 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: centos
-    image: docker.io/pycontribs/centos:8
-    pre_build_image: true
-  - name: ubuntu
-    image: docker.io/pycontribs/ubuntu:latest
-    pre_build_image: true
-  - name: fedora
-    image: docker.io/pycontribs/fedora:latest
+  - name: debian
+    image: docker.io/pycontribs/debian:latest
     pre_build_image: true
 provisioner:
   name: ansible

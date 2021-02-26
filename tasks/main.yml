@@ -1,6 +1,6 @@
 ---
 # tasks file for valheim-server
-- name: Add the user 'james' with a bash shell
+- name: Add the user with a bash shell
   user:
     name: "{{ gm_name }}"
     shell: /bin/bash
@@ -11,32 +11,6 @@
     install_dir: /home/{{ gm_name }}/valheim
   when: install_dir is not defined
 
-
-- debug:
-    var: ansible_architecture
-
-- name: x86_64 fix
-  block:
-
-
-    - name: add multiver repository debian
-      apt:
-        name: lib32gcc-s1
-        state: present
-        update_cache: yes
-      when:  ansible_os_family == 'Debian'
-
-    # - name: install git for RedHat systems
-    #   dnf: name=lib32gcc update_cache=yes
-    #   when:  ansible_os_family == 'RedHat'
-
-    # - name: install lib32gcc1
-    #   package:
-    #     name: steamcmd
-    #     state: latest
-
-  when: ansible_architecture == "x86_64"
-
 - name: install screen
   become: yes
   become_user: root
@@ -45,20 +19,19 @@
     state: present
 
 - block:
+  - name: install steamcmd
+    import_role:
+      name: ansible-steamcmd
+    vars:
+      steamcmd_user: "{{ gm_name }}"
   - name: ensure main directory exists
     file:
       path: "{{ install_dir }}"
       state: directory
 
-  - name: update steamcmd on first run
-    shell:
-      cmd: steamcmd
-      chdir: "{{ install_dir }}"
-
-
   - name: install server files
     shell:
-      cmd: "{{ install_dir }}/linux32/steamcmd +login anonymous +force_install_dir {{ install_dir }} +app_update 896660 validate +exit"
+      cmd: "/usr/games/steamcmd +login anonymous +force_install_dir {{ install_dir }} +app_update 896660 validate +exit"
       chdir: "{{ install_dir }}"
 
   - name: run valheim
