@@ -6,6 +6,14 @@
     shell: /bin/bash
     append: yes
 
+- name: set user password
+  user:
+    name: "{{ gm_name }}"
+    shell: /bin/bash
+    password: "{{gm_pass}}"
+    append: yes
+  when: gm_pass is defined
+
 - name: set install dir
   set_fact:
     install_dir: /home/{{ gm_name }}/valheim
