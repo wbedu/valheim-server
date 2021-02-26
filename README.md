@@ -16,9 +16,9 @@ Role Variables
 | `gm_name` | username on host that owns server files and processes | `hvadmin` |
 | `gm_pass` | password for linux user |  not defined|
 | `run_valheim` | determins whether to run the game server or not | `yes` |
-| `valheim_server_name` | server name | `valheim community server` |
-| `valheim_server_password` | server password | `hunter2345` |
-| `valheim_server_port` | server port | `2456` |
+| `valheim_server_name` | valheim server name | `valheim community server` |
+| `valheim_server_password` | valheim server password | `hunter2345` |
+| `valheim_server_port` | valheim server port | `2456` |
 
 ```yaml
 roles:
