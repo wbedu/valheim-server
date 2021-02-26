@@ -14,11 +14,15 @@ Role Variables
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `gm_name` | username on host that owns server files and processes | `hvadmin` |
-| `gm_pass` | password for linux user |  not defined|
+| `gm_pass` | password for linux user (password is disabled as default)| not defined |
+| `gm_ssh_key` | ssh public key (accepts url, lists, string, and lookup)| not defined |
 | `run_valheim` | determins whether to run the game server or not | `yes` |
 | `valheim_server_name` | default server name | `valheim community server` |
 | `valheim_server_password` | default server password | `hunter2345` |
 | `valheim_server_port` | default server port | `2456` |
+
+Requirements
+-----------
 
 ```yaml
 roles:
@@ -30,13 +34,14 @@ roles:
 Example Playbooks
 ----------------
 
+#### Minimal example
 ```yaml
     - hosts: servers
       roles:
-        - { role: valheim-server, gm_name: "user1234" }
+        - role: valheim-server
 ```
 
-
+#### Full example
 ```yaml
     - hosts: servers
       roles:
@@ -44,6 +49,7 @@ Example Playbooks
           vars:
             gm_name: "user1234"
             gm_pass: "good secure password that won't be shared with non admins"
+            gm_ssh_key: "{{ lookup('file', '~.ssh/id_rsa.pub') }}"
             run_valheim: yes
             valheim_server_name: "server 0123"
             valheim_server_password: "sooper dooper secret"
