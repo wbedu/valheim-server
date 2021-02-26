@@ -18,12 +18,13 @@ Role Variables
 
 Dependencies
 ------------
+```yaml
 roles:
-  - src: https://github.com/aversiste/siw36.ansible_steamcmd
-.git
-    name: aversiste.steamcmd
-    version: master.
+  - src: https://github.com/Aversiste/ansible-steamcmd.git
+    name: Aversiste.ansible-steamcmd
+    version: master
 
+```
 Example Playbook
 ----------------
 
