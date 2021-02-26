@@ -49,7 +49,7 @@ Example Playbooks
           vars:
             gm_name: "user1234"
             gm_pass: "good secure password that won't be shared with non admins"
-            gm_ssh_key: "{{ lookup('file', '~.ssh/id_rsa.pub') }}"
+            gm_ssh_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
             run_valheim: yes
             valheim_server_name: "server 0123"
             valheim_server_password: "sooper dooper secret"
