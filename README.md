@@ -37,7 +37,14 @@ Example Playbook
 
     - hosts: servers
       roles:
-        - { role: valheim-server, gm_name: "user1234" }
+        - role: valheim-server
+          vars:
+            gm_name: "user1234"
+            gm_pass: "good secure password that i won't share with non admins"
+            run_valheim: yes
+            valheim_server_name: "server 0123"
+            valheim_server_password: "sooper dooper secret"
+            valheim_server_port: "2456"
 ```
 License
 -------
