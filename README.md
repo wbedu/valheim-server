@@ -27,20 +27,23 @@ roles:
     version: master
 
 ```
-Example Playbook
+Example Playbooks
 ----------------
 
 ```yaml
     - hosts: servers
       roles:
         - { role: valheim-server, gm_name: "user1234" }
+```
 
+
+```yaml
     - hosts: servers
       roles:
         - role: valheim-server
           vars:
             gm_name: "user1234"
-            gm_pass: "good secure password that i won't share with non admins"
+            gm_pass: "good secure password that won't be shared with non admins"
             run_valheim: yes
             valheim_server_name: "server 0123"
             valheim_server_password: "sooper dooper secret"
